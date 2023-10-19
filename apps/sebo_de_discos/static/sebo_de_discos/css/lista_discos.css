@@ -1,0 +1,19 @@
+li {
+    list-style-image: url('../icons/disc-white.svg');
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    background-color: #252525;
+
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #7F00FF;
+}

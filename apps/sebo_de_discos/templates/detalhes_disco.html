@@ -11,25 +11,26 @@
     <main>
         <h1>{{ disco.nome }}</h1>
         <h2>Detalhes:</h2>
-        <dl>
-            <dt>Descrição</dt>
-            <dd>{{ disco.descricao }}</dd>
+        <ul>
+            <li>Descrição: {{ disco.descricao }}</li>
 
-            <dt>Selo Fonográfico</dt>
-            <dd>{{ disco.selo_fonografico.titulo }}</dd>
+            <li>Selo Fonográfico: {{ disco.selo_fonografico.titulo }}</li>
 
-            <dt>Ano</dt>
-            <dd>{{ disco.ano }}</dd>
+            <li>Ano: {{ disco.ano }}</li>
 
-            <dt>País:</dt>
-            <dd>{{ disco.pais }}</dd>
+            <li>País: {{ disco.pais }}</li>
 
-            <dt>Gênero</dt>
-            <dd>{{ disco.genero }}</dd>
+            <li>Gênero: {{ disco.genero }}</li>
 
-            <dt>Quantidade</dt>
-            <dd>{{ disco.quantidade }}</dd>
-        </dl>
+            <li>Quantidade: {{ disco.quantidade }}</li>
+        </ul>
+        <h2>Sobre o(s) artista(s):</h2>
+        {% for artista in artistas %}
+        <ul>
+            <li>Nome: {{ artista.nome }}</li>
+            <li>Idade {{ artista.idade }}</li>
+        </ul>
+        {% endfor %}
     </main>
 </body>
 </html>
