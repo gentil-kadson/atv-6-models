@@ -1,18 +1,9 @@
-li {
-    list-style-image: url('../icons/disc-white.svg');
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-li:hover {
-    color: #7F00FF;
-}
-
 main {
+    border: 2px solid #7F00FF;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: fit-content;
     height: fit-content;
     background-color: #252525;
@@ -20,4 +11,17 @@ main {
     padding: 30px;
     border-radius: 10px;
     border: 2px solid #7F00FF;
+}
+
+ul::before {
+    content: '-';
+}
+
+ul:last-of-type {
+    border: 2px solid #7F00FF;
+    list-style: decimal;
+}
+
+li {
+    margin-bottom: 5px;
 }
