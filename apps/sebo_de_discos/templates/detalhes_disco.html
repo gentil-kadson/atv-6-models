@@ -1,11 +1,35 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>{{ disco.nome }}</title>
 </head>
 <body>
-    
+    <main>
+        <h1>{{ disco.nome }}</h1>
+        <h2>Detalhes:</h2>
+        <dl>
+            <dt>Descrição</dt>
+            <dd>{{ disco.descricao }}</dd>
+
+            <dt>Selo Fonográfico</dt>
+            <dd>{{ disco.selo_fonografico.titulo }}</dd>
+
+            <dt>Ano</dt>
+            <dd>{{ disco.ano }}</dd>
+
+            <dt>País:</dt>
+            <dd>{{ disco.pais }}</dd>
+
+            <dt>Gênero</dt>
+            <dd>{{ disco.genero }}</dd>
+
+            <dt>Quantidade</dt>
+            <dd>{{ disco.quantidade }}</dd>
+        </dl>
+    </main>
 </body>
 </html>

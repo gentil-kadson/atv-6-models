@@ -12,7 +12,7 @@
         <h1>Discos Cadastrados:</h1>
         <ul>
             {% for disco in discos %}
-                <li>{{ disco.nome }}</li>
+                <li><a href="disco/{{ disco.id }}">{{ disco.nome }}</a></li>
             {% endfor %}
         </ul>
     </main>
