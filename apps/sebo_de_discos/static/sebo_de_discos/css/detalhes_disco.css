@@ -4,24 +4,32 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: fit-content;
-    height: fit-content;
     background-color: #252525;
 
+    margin: 3rem auto;
     padding: 30px;
     border-radius: 10px;
     border: 2px solid #7F00FF;
 }
 
-ul::before {
-    content: '-';
-}
-
-ul:last-of-type {
+ul {
     border: 2px solid #7F00FF;
-    list-style: decimal;
+    border-radius: 8px;
+    list-style: inside;
+    padding: 30px;
 }
 
 li {
     margin-bottom: 5px;
+}
+
+section:last-of-type {
+    display: flex;
+    gap: 15px;
+    text-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+section {
+    max-width: 37rem;
 }

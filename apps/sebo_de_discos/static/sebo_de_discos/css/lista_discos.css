@@ -1,5 +1,8 @@
-li {
+ul {
     list-style-image: url('../icons/disc-white.svg');
+}
+
+li {
     font-size: 20px;
     margin-bottom: 5px;
 }
@@ -12,11 +15,12 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: fit-content;
     height: fit-content;
     background-color: #252525;
 
+    margin: 3rem auto;
     padding: 30px;
     border-radius: 10px;
     border: 2px solid #7F00FF;
