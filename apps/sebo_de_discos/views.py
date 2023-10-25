@@ -23,6 +23,7 @@ def cadastrar_disco(request):
         form_cadastro_disco = DiscoForm(request.POST)
 
         if form_cadastro_disco.is_valid():
+            Disco.save(form_cadastro_disco)
             return HttpResponseRedirect("/")
     else:
         form_cadastro_disco = DiscoForm()

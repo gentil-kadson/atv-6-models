@@ -3,11 +3,46 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     background-color: #252525;
 
     margin: 3rem auto;
     padding: 30px;
     border-radius: 10px;
     border: 2px solid #7F00FF;
+    width: 25rem;
+}
+
+section {
+    width: inherit;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: inherit;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    border: none;
+    border-radius: 8px;
+    height: 2rem;
+    padding-left: 1rem;
+}
+
+.form-group input:focus,
+.form-group select {
+    outline: none;
 }

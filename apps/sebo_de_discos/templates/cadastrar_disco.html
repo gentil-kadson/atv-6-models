@@ -17,6 +17,12 @@
         <h2>Preencha os campos abaixo:</h2>
         <section>
             <form action="/cadastrar-disco/" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }} {{ field }}
+                </div>
+                {% endfor %}
                 <input type="submit" value="Registrar disco">
             </form>
         </section>
