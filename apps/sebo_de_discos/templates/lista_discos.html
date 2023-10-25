@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +10,18 @@
     <link rel="stylesheet" href="{% static 'sebo_de_discos/css/global.css' %}">
     <link rel="stylesheet" href="{% static 'sebo_de_discos/css/lista_discos.css' %}">
 </head>
+
 <body>
     <main>
         <h1>Discos Cadastrados</h1>
         <h2>Clique no disco específico para saber mais!</h2>
         <ul>
             {% for disco in discos %}
-                <li><a href="{% url 'disco' disco.id %}">{{ disco.nome }}</a></li>
+            <li><a href="{% url 'disco' disco.id %}">{{ disco.nome }}</a></li>
             {% endfor %}
         </ul>
+        <button><a href="{% url 'cadastrar_disco' %}">Cadastrar disco</a></button>
     </main>
 </body>
+
 </html>
