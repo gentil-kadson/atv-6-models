@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Disco</title>
     <link rel="stylesheet" href="{% static 'sebo_de_discos/css/global.css' %}">
-    <link rel="stylesheet" href="{% static 'sebo_de_discos/css/cadastrar_disco.css' %}">
+    <link rel="stylesheet" href="{% static 'sebo_de_discos/css/salvar_disco.css' %}">
 </head>
 
 <body>
@@ -16,14 +16,14 @@
         <h1>Cadastrar Disco</h1>
         <h2>Preencha os campos abaixo:</h2>
         <section>
-            <form action="/cadastrar-disco/" method="post">
+            <form action="" method="post">
                 {% csrf_token %}
                 {% for field in form %}
                 <div class="form-group">
                     {{ field.label_tag }} {{ field }}
                 </div>
                 {% endfor %}
-                <input type="submit" value="Registrar disco">
+                <input type="submit" value="Salvar disco">
             </form>
         </section>
     </main>

@@ -1,6 +1,5 @@
-from .models import Disco, Artista
+from .models import Disco
 from django.forms import ModelForm
-from django import forms
 
 class DiscoForm(ModelForm):
     class Meta:

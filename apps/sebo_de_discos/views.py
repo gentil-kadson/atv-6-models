@@ -28,10 +28,24 @@ def cadastrar_disco(request):
     else:
         form_cadastro_disco = DiscoForm()
         
-    return render(request, 'cadastrar_disco.html', { 'form': form_cadastro_disco })
+    return render(request, 'salvar_disco.html', { 'form': form_cadastro_disco })
 
 def remover_disco(request, id_disco):
     disco_a_ser_deletado = Disco.objects.get(id=id_disco)
     disco_a_ser_deletado.delete()
 
     return HttpResponseRedirect('/')
+
+def editar_disco(request, id_disco):
+    disco = Disco.objects.get(id=id_disco)
+    disco_form = DiscoForm(instance=disco)
+
+    if request.method == 'POST':
+        disco_form = DiscoForm(request.POST, instance=disco)
+        if disco_form.is_valid():
+            disco_form.save()
+            return HttpResponseRedirect('/')
+        
+    context = { 'form': disco_form }
+
+    return render(request, 'salvar_disco.html', context)
