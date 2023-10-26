@@ -15,6 +15,7 @@
     <main>
         <h1>Discos Cadastrados</h1>
         <h2>Clique no disco específico para saber mais!</h2>
+        <button id="add-disk-button"><a href="{% url 'cadastrar_disco' %}">Cadastrar disco</a></button>
         <table>
             <thead>
                 <tr>
@@ -50,7 +51,6 @@
                 {% endfor %}
             </tbody>
         </table>
-        <button id="add-disk-button"><a href="{% url 'cadastrar_disco' %}">Cadastrar disco</a></button>
     </main>
 </body>
 
