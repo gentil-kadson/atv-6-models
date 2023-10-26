@@ -1,14 +1,50 @@
-ul {
-    list-style-image: url('../icons/disc-white.svg');
+table {
+    border: 2px solid #7F00FF;
+    border-radius: 8px;
 }
 
-li {
-    font-size: 20px;
-    margin-bottom: 5px;
+th,
+td {
+    text-align: left;
+    width: 25%;
+    padding: 13px;
 }
 
-li:hover {
-    color: #7F00FF;
+#buttons-container {
+    display: flex;
+    margin: auto;
+    gap: .5rem;
+}
+
+#buttons-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#buttons-container button img {
+    filter: invert(99%) sepia(6%) saturate(4%) hue-rotate(31deg) brightness(104%) contrast(100%);
+}
+
+tbody tr:nth-of-type(even),
+thead th {
+    background-color: #181818;
+}
+
+th:first-of-type {
+    border-radius: 8px 0px 0px 0px;
+}
+
+th:last-of-type {
+    border-radius: 0px 8px 0px 0px;
+}
+
+tbody tr:last-of-type td:first-of-type {
+    border-radius: 0px 0px 0px 8px;
+}
+
+tbody tr:last-of-type td:last-of-type {
+    border-radius: 0px 0px 8px 0px;
 }
 
 main {
@@ -24,4 +60,14 @@ main {
     padding: 30px;
     border-radius: 10px;
     border: 2px solid #7F00FF;
+}
+
+#buttons-container a {
+    padding: 0;
+    margin: 0;
+    height: fit-content;
+}
+
+#add-disk-button {
+    margin-top: 2rem;
 }

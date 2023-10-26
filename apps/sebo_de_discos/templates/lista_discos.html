@@ -15,12 +15,40 @@
     <main>
         <h1>Discos Cadastrados</h1>
         <h2>Clique no disco específico para saber mais!</h2>
-        <ul>
-            {% for disco in discos %}
-            <li><a href="{% url 'disco' disco.id %}">{{ disco.nome }}</a></li>
-            {% endfor %}
-        </ul>
-        <button><a href="{% url 'cadastrar_disco' %}">Cadastrar disco</a></button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Ano</th>
+                    <th>Gênero</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for disco in discos %}
+                <tr>
+                    <td>
+                        {{ disco.nome }}
+                    </td>
+                    <td>{{ disco.ano }}</td>
+                    <td>{{ disco.genero }}</td>
+                    <td>
+                        <div id="buttons-container">
+                            <a href="{% url 'disco' disco.id %}"><button><img
+                                        src="{% static 'sebo_de_discos/icons/eye.svg' %}"
+                                        alt="a white-outlined eye"></button></a>
+                            <a href="{% url 'editar_disco' disco.id %}"><button><img
+                                        src="{% static 'sebo_de_discos/icons/edit.svg' %}"
+                                        alt="white, outlined pencil inside an also outlined square."></button></a>
+                            <button><img src="{% static 'sebo_de_discos/icons/delete.svg' %}"
+                                    alt="A trash can."></button>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button id="add-disk-button"><a href="{% url 'cadastrar_disco' %}">Cadastrar disco</a></button>
     </main>
 </body>
 

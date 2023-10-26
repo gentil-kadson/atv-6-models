@@ -1,6 +1,5 @@
 from django.shortcuts import render, HttpResponseRedirect
-from .models import Disco, Artista
-from .forms import DiscoForm
+from .models import Disco, DiscoForm, Artista
 
 
 # Create your views here.
@@ -18,7 +17,7 @@ def disco(request, id_disco):
 
     return render(request, 'detalhes_disco.html', context)
 
-def cadastrar_disco(request):
+def cadastrar_disco(request, id_disco):
     if request.method == "POST":
         form_cadastro_disco = DiscoForm(request.POST)
 
@@ -26,6 +25,7 @@ def cadastrar_disco(request):
             Disco.save(form_cadastro_disco)
             return HttpResponseRedirect("/")
     else:
-        form_cadastro_disco = DiscoForm()
+        disco_especifico = Disco.objects.get(id=id_disco)
+        form_cadastro_disco = DiscoForm(instance=disco_especifico)
 
     return render(request, 'cadastrar_disco.html', { 'form': form_cadastro_disco })

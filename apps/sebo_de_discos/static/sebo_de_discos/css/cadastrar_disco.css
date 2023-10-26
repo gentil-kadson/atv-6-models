@@ -35,14 +35,27 @@ form {
 }
 
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
     border: none;
     border-radius: 8px;
     height: 2rem;
     padding-left: 1rem;
 }
 
+.form-group:last-of-type select {
+    height: 5rem;
+    padding: 8px 0px;
+    border-radius: 8px;
+}
+
+textarea {
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .form-group input:focus,
-.form-group select {
+.form-group select:focus,
+.form-group textarea:focus {
     outline: none;
 }

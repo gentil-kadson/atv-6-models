@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 
 # Create your models here.
 
@@ -21,7 +22,10 @@ class Disco(models.Model):
 
     def __str__(self):
         return self.nome
-
+class DiscoForm(ModelForm):
+    class Meta:
+        model = Disco
+        fields = "__all__"
 
 class Artista(models.Model):
     nome = models.CharField(max_length=30)
