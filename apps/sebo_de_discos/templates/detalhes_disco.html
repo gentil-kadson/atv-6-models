@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,34 +11,36 @@
 
     <title>{{ disco.nome }}</title>
 </head>
+
 <body>
     <main>
         <h1>{{ disco.nome }}</h1>
         <h2>Detalhes:</h2>
         <section>
             <ul>
-            <li>Descrição: {{ disco.descricao }}</li>
+                <li>Descrição: {{ disco.descricao }}</li>
 
-            <li>Selo Fonográfico: {{ disco.selo_fonografico.titulo }}</li>
+                <li>Selo Fonográfico: {{ disco.selo_fonografico.titulo }}</li>
 
-            <li>Ano: {{ disco.ano }}</li>
+                <li>Ano: {{ disco.ano }}</li>
 
-            <li>País: {{ disco.pais }}</li>
+                <li>País: {{ disco.pais }}</li>
 
-            <li>Gênero: {{ disco.genero }}</li>
+                <li>Gênero: {{ disco.genero }}</li>
 
-            <li>Quantidade: {{ disco.quantidade }}</li>
+                <li>Quantidade: {{ disco.quantidade }}</li>
             </ul>
         </section>
         <h2>Sobre o(s) artista(s):</h2>
         <section>
             {% for artista in artistas %}
-                <ul>
-                    <li>Nome: {{ artista.nome }}</li>
-                    <li>Idade: {{ artista.idade }} anos</li>
-                </ul>
+            <ul>
+                <li>Nome: {{ artista.nome }}</li>
+                <li>Idade: {{ artista.idade }} anos</li>
+            </ul>
             {% endfor %}
         </section>
     </main>
 </body>
+
 </html>

@@ -1,5 +1,4 @@
 from django.db import models
-from django.forms import ModelForm
 
 # Create your models here.
 
@@ -9,6 +8,12 @@ class SeloFonografico(models.Model):
     def __str__(self):
         return self.titulo
 
+class Artista(models.Model):
+    nome = models.CharField(max_length=30)
+    idade = models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.nome
 
 class Disco(models.Model):
     nome = models.TextField(max_length=200)
@@ -19,18 +24,7 @@ class Disco(models.Model):
     pais = models.TextField(max_length=80)
     genero = models.TextField(max_length=70)
     quantidade = models.BigIntegerField()
-
-    def __str__(self):
-        return self.nome
-class DiscoForm(ModelForm):
-    class Meta:
-        model = Disco
-        fields = "__all__"
-
-class Artista(models.Model):
-    nome = models.CharField(max_length=30)
-    idade = models.PositiveIntegerField()
-    discos = models.ManyToManyField(Disco)
+    artistas = models.ManyToManyField(Artista)
 
     def __str__(self):
         return self.nome

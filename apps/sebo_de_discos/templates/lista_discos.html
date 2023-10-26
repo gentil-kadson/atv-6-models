@@ -40,8 +40,10 @@
                             <a href="{% url 'editar_disco' disco.id %}"><button><img
                                         src="{% static 'sebo_de_discos/icons/edit.svg' %}"
                                         alt="white, outlined pencil inside an also outlined square."></button></a>
-                            <button><img src="{% static 'sebo_de_discos/icons/delete.svg' %}"
-                                    alt="A trash can."></button>
+                            <a href="{% url 'remover_disco' disco.id %}">
+                                <button><img src="{% static 'sebo_de_discos/icons/delete.svg' %}"
+                                        alt="A trash can."></button>
+                            </a>
                         </div>
                     </td>
                 </tr>
