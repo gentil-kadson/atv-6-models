@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponseRedirect
-from .models import Disco, Artista
+from .models import Disco
 from .forms import DiscoForm
 
 
